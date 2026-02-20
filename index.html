@@ -2,75 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Specific Match</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
 <div class="app">
 
-  <!-- HERO -->
+  <!-- HERO SCREEN -->
   <div id="hero" class="screen active">
-    <div class="hero-content">
-      <h1>Specific Match</h1>
-      <p>Find people that truly match you.</p>
-      <button id="startBtn">Get Started</button>
-    </div>
+    <h1>Specific Match</h1>
+    <p>Find people that truly match you.</p>
+    <button id="startBtn">Start</button>
   </div>
 
-  <!-- STEP 1 -->
+  <!-- STEP 1: YOUR PROFILE -->
   <div id="step1" class="screen">
-    <h2>Your Profile</h2>
+    <div class="title-row">
+      <button class="backBtn">&larr;</button>
+      <h2>Your Profile</h2>
+    </div>  
 
     <div class="form-group">
-      <input id="name" type="text" placeholder="Your Name">
-      <input id="instagram" type="text" value="@" />
+      <input id="name" placeholder="Your Name" />
+      <input id="instagram" placeholder="Your Instagram" />
 
-      <select id="personality">
-        <option value="">Personality</option>
-        <option value="introvert">Introvert</option>
-        <option value="extrovert">Extrovert</option>
-        <option value="ambivert">Ambivert</option>
-      </select>
+      <div class="age-height-row">
+        <select id="gender">
+          <option value="">Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
 
-      <select id="interest">
-        <option value="">Interest</option>
-        <option value="travel">Travel</option>
-        <option value="fitness">Fitness</option>
-        <option value="music">Music</option>
-        <option value="art">Art</option>
-      </select>
+        <select id="fashion">
+          <option value="">Fashion Type</option>
+          <option>Clean Looks</option>
+          <option>Skena/Gothic</option>
+          <option>Streetwear</option>
+          <option>Casual</option>
+        </select>
+      </div>
 
-      <button id="toStep2">Continue</button>
+      <!-- Age + Height row -->
+      <div class="age-height-row">
+        <select id="age">
+          <option value="">Age</option>
+          <option>18-21</option>
+          <option>21-24</option>
+          <option>24-27</option>
+          <option>27-30</option>
+        </select>
+
+        <div class="input-with-suffix">
+          <input id="height" type="number" placeholder="Height" />
+          <span class="suffix">cm</span>
+        </div>
+      </div>
+
+      <!-- Interest/Hobby checkboxes -->
+      <div class="checkbox-container">
+        <span class="checkbox-label">Interest / Hobby</span>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Traveling" /> Traveling</label>
+          <label><input type="checkbox" value="Programming" /> Programming</label>
+          <label><input type="checkbox" value="Design" /> Design</label>
+          <label><input type="checkbox" value="Coffee Shop Hopping" /> Coffee Shop Hopping</label>
+          <label><input type="checkbox" value="Clubbing/Bar" /> Clubbing/Bar</label>
+          <label><input type="checkbox" value="Singing" /> Singing</label>
+        </div>
+      </div>
+
     </div>
+
+    <button id="toStep2">Continue</button>
   </div>
 
-  <!-- STEP 2 -->
+  <!-- STEP 2: YOUR PREFERENCES -->
   <div id="step2" class="screen">
-    <h2>Your Preferences</h2>
+    <div class="title-row">
+      <button class="backBtn">&larr;</button>
+      <h2>Your Preferences</h2>
+    </div>
 
     <div class="form-group">
-      <select id="prefPersonality">
-        <option value="">Preferred Personality</option>
-        <option value="introvert">Introvert</option>
-        <option value="extrovert">Extrovert</option>
-        <option value="ambivert">Ambivert</option>
+
+      <!-- Preferred Gender -->
+      <div class="radio-group">
+        <span class="checkbox-label">Preferred Gender</span>
+        <label><input type="radio" name="prefGender" value="Male"> Male</label>
+        <label><input type="radio" name="prefGender" value="Female"> Female</label>
+      </div>
+
+      <!-- Preferred Fashion -->
+      <select id="prefFashion">
+        <option value="">Preferred Fashion</option>
+        <option>Clean Looks</option>
+        <option>Skena/Gothic</option>
+        <option>Streetwear</option>
+        <option>Casual</option>
       </select>
 
-      <select id="prefInterest">
-        <option value="">Preferred Interest</option>
-        <option value="travel">Travel</option>
-        <option value="fitness">Fitness</option>
-        <option value="music">Music</option>
-        <option value="art">Art</option>
-      </select>
+      <!-- Age + Height row -->
+      <div class="age-height-row">
+        <select id="prefAge">
+          <option value="">Preferred Age</option>
+          <option>18-21</option>
+          <option>21-24</option>
+          <option>24-27</option>
+          <option>27-30</option>
+        </select>
 
-      <button id="findMatch">Find Match</button>
+        <select id="prefHeight">
+          <option value="">Preferred Height</option>
+          <option>155-160</option>
+          <option>160-165</option>
+          <option>165-170</option>
+          <option>170+</option>
+        </select>
+      </div>
+
+      <!-- Preferred Interests -->
+      <div class="checkbox-container">
+        <span class="checkbox-label">Preferred Interest</span>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Traveling" /> Traveling</label>
+          <label><input type="checkbox" value="Programming" /> Programming</label>
+          <label><input type="checkbox" value="Design" /> Design</label>
+          <label><input type="checkbox" value="Coffee Shop Hopping" /> Coffee Shop Hopping</label>
+          <label><input type="checkbox" value="Clubbing/Bar" /> Clubbing/Bar</label>
+          <label><input type="checkbox" value="Singing" /> Singing</label>
+        </div>
+      </div>
+
     </div>
+
+    <button id="findMatch">Find Match</button>
   </div>
 
-  <!-- MATCH -->
+  <!-- MATCH SCREEN -->
   <div id="matchScreen" class="screen">
     <h2>Your Matches</h2>
     <div id="matchList" class="match-list"></div>
