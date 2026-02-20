@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Specific Match</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HERO -->
+  <div id="hero" class="screen active">
+    <div class="hero-content">
+      <h1>Specific Match</h1>
+      <p>Find people that truly match you.</p>
+      <button id="startBtn">Get Started</button>
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div id="step1" class="screen">
+    <h2>Your Profile</h2>
+
+    <div class="form-group">
+      <input id="name" type="text" placeholder="Your Name">
+      <input id="instagram" type="text" value="@" />
+
+      <select id="personality">
+        <option value="">Personality</option>
+        <option value="introvert">Introvert</option>
+        <option value="extrovert">Extrovert</option>
+        <option value="ambivert">Ambivert</option>
+      </select>
+
+      <select id="interest">
+        <option value="">Interest</option>
+        <option value="travel">Travel</option>
+        <option value="fitness">Fitness</option>
+        <option value="music">Music</option>
+        <option value="art">Art</option>
+      </select>
+
+      <button id="toStep2">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" class="screen">
+    <h2>Your Preferences</h2>
+
+    <div class="form-group">
+      <select id="prefPersonality">
+        <option value="">Preferred Personality</option>
+        <option value="introvert">Introvert</option>
+        <option value="extrovert">Extrovert</option>
+        <option value="ambivert">Ambivert</option>
+      </select>
+
+      <select id="prefInterest">
+        <option value="">Preferred Interest</option>
+        <option value="travel">Travel</option>
+        <option value="fitness">Fitness</option>
+        <option value="music">Music</option>
+        <option value="art">Art</option>
+      </select>
+
+      <button id="findMatch">Find Match</button>
+    </div>
+  </div>
+
+  <!-- MATCH -->
+  <div id="matchScreen" class="screen">
+    <h2>Your Matches</h2>
+    <div id="matchList" class="match-list"></div>
+    <button id="restartBtn">Start Again</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
